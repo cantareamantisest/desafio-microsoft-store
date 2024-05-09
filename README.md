@@ -1,27 +1,48 @@
-# MicrosoftStore
+# Microsoft Store Clone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+- Esse projeto é um desafio de código que faz parte da trilha de Angular da [DIO](https://dio.me).
+- Trata de um simples clone da Microsoft Store. Obviamente que não está implementado todas as funcionalidades de um e-commerce.
+
+## Requisitos
+
+- Para executar esse exemplo é necessário criar uma conta grátis no site [Rawg.io](https://rawg.io/) e obter uma chave para utilizar a API que obtém as informações referente aos jogos.
+- Substitua a variável `apiKey` conforme mostrado no código abaixo, pela chave obtida após realizar com sucesso o cadastro no site.
+- Depois de clonar o projeto execute o comando `npm i` para instalar todas as dependências do projeto em sua máquina.
+
+```games.service.ts
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, map } from 'rxjs';
+import { Games } from '../interfaces/games.interface';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class GamesService {
+  private readonly baseUrl: string = 'https://api.rawg.io/api/games';
+  private readonly apiKey: string = 'your-api-key';
+
+  constructor(private readonly http: HttpClient) {}
+
+  getGames(page: number, page_size: number): Observable<Games[]> {
+  }
+}
+```
+
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 17.3.1.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Execute `ng serve -o` para criar um server de desenvolvimento. Navegue para `http://localhost:4200/`. A aplicação recarregará automaticamente para qualquer alteração realizada no projeto.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng generate component component-name` para gerar um novo componente. Você também pode usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Compilação
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute `ng build` para compilar o projeto. Os artefatos da compilação serão armazenados no diretório `dist/`.
 
-## Running unit tests
+## Ajuda
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para obter mais ajuda execute `ng help` ou consulte a página [Angular CLI Overview and Command Reference](https://angular.io/cli).

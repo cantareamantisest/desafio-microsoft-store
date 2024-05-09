@@ -1,0 +1,27 @@
+.title__container {
+  margin-top: 100px;
+  > .title-main {
+    font-size: 2.45rem;
+  }
+  > .title-filter {
+    margin-top: 20px;
+    display: flex;
+    > .title-sub {
+      font-size: 1.75rem;
+    }
+    > .title-list-buttons {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      .btn-filter {
+        margin-left: 20px;
+        padding: 10px;
+        border-style: none;
+        &:hover {
+          cursor: pointer;
+          background-color: darkgray;
+        }
+      }
+    }
+  }
+}

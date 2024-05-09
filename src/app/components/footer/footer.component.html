@@ -1,0 +1,12 @@
+<footer class="footer">
+  <nav class="nav-footer" *ngIf="navGroups$">
+    <div class="nav-group" *ngFor="let group of navGroups$ | async">
+      <h4 class="nav-title-footer">{{ group.title }}</h4>
+      <ul class="nav-list-footer" *ngFor="let item of group.items">
+        <li class="nav-item-footer">
+          <a routerlink="">{{ item.name }}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</footer>

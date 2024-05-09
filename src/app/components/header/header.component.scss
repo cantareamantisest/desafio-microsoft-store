@@ -1,0 +1,45 @@
+.header__container {
+  margin: 10px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  > .header-link {
+    &:hover {
+      cursor: pointer;
+    }
+    > .header-logo {
+      width: 80%;
+      max-width: 150px;
+    }
+  }
+  > .header-navigation {
+    text-align: left;
+    > .header-navigation-ul {
+      list-style: none;
+      display: flex;
+      > .navigation-item {
+        text-decoration: none;
+        margin-right: 20px;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  > .header-actions {
+    text-align: right;
+    > .header-actions-ul {
+      list-style: none;
+      display: flex;
+      > .actions-item {
+        text-decoration: none;
+        margin-right: 20px;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.mini-card__container {
+  -webkit-box-shadow: 0 0.1875rem 0.4375rem 0 rgba(0, 0, 0, 0.13),
+    0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 0 0.1875rem 0.4375rem 0 rgba(0, 0, 0, 0.13),
+    0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.11);
+  box-shadow: 0 0.1875rem 0.4375rem 0 rgba(0, 0, 0, 0.13),
+    0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.11);
+  width: 220px;
+  height: 420px;
+  max-height: 420px;
+  overflow: hidden;
+  transform-origin: 50% 65%;
+  transition: transform 2s, filter 1s ease-in-out;
+  filter: brightness(100%);
+  &:hover {
+    filter: brightness(110%);
+    transform: scale(1.2);
+  }
+  > .mini-card-image {
+    width: 220px;
+    height: 200px;
+    margin-bottom: 3rem;
+    > .game-cover {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  > .mini-card-header {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffb900;
+    margin: 1.25rem;
+    > .mini-card-price {
+      margin-left: 10px;
+      text-align: left;
+      font-weight: 500;
+    }
+  }
+  > .mini-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 150px;
+    max-height: 150px;
+    margin-bottom: 0;
+    .original-price {
+      margin-top: 10px;
+      text-decoration: line-through;
+    }
+    .off-price {
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="main__content">
+  <app-title></app-title>
+
+  <ng-container *ngIf="loading$ | async; else loaded">
+    <mat-spinner></mat-spinner>
+  </ng-container>
+
+  <ng-template #loaded>
+    <div class="gallery-games">
+      <ul class="gallery-games-list">
+        <li class="gallery-games-item" *ngFor="let game of games$ | async">
+          <app-mini-card
+            [backgroundImage]="game.background_image"
+            [gameName]="game.name"
+            [alternativeImage]="game.alternative_image"
+          ></app-mini-card>
+        </li>
+      </ul>
+
+      <mat-paginator
+        [length]="6363"
+        [pageSize]="pageSize"
+        (page)="handlePageEvent($event)"
+      >
+      </mat-paginator>
+    </div>
+  </ng-template>
+</div>
+<app-footer></app-footer>
